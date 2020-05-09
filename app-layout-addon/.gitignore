@@ -1,0 +1,17 @@
+# Created by .ignore support plugin (hsz.mobi)
+/.idea/
+/target/
+/out/
+
+/package.json
+/package-lock.json
+/node_modules
+webpack.config.js
+webpack.generated.js
+tsconfig.json
+
+dependency_tree.txt
+
+_sokrates/reports
+src/main/resources/mapbox_default.properties
+/src/test/resources/personal/

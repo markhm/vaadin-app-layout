@@ -4,7 +4,7 @@
     <artifactId>app-layout-addon</artifactId>
     <groupId>com.github.appreciated</groupId>
     <modelVersion>4.0.0</modelVersion>
-    <version>4.0.0-SNAPSHOT</version>
+    <version>4.0.1-SNAPSHOT</version>
 
     <name>App Layout Add-on</name>
     <description>Integration of app-layout for Vaadin 14</description>
@@ -21,7 +21,8 @@
         <failOnMissingWebXml>false</failOnMissingWebXml>
 
         <!-- Dependencies -->
-        <vaadin.version>14.1.17</vaadin.version>
+        <!-- <vaadin.version>14.1.17</vaadin.version> -->
+        <vaadin.version>15.0.6</vaadin.version>
         <jetty.version>9.4.15.v20190215</jetty.version>
     </properties>
 
@@ -142,6 +143,44 @@
 
     <build>
         <plugins>
+
+            <plugin>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <filesets>
+                        <fileset>
+                            <directory>.</directory>
+                            <includes>
+                                <include>package.json</include>
+                                <include>package-lock.json</include>
+                                <include>webpack.config.js</include>
+                                <include>webpack.generated.js</include>
+                            </includes>
+                            <followSymlinks>false</followSymlinks>
+                        </fileset>
+                        <fileset>
+                            <directory>./node_modules</directory>
+                            <includes>
+                                <include>**/**</include>
+                            </includes>
+                            <followSymlinks>false</followSymlinks>
+                        </fileset>
+                        <fileset>
+                            <directory>./src/main/webapp/WEB-INF</directory>
+                            <includes>
+                                <include>classes/**/**</include>
+                                <include>lib/**/**</include>
+                            </includes>
+                            <excludes>
+                                <exclude>web.xml</exclude>
+                                <exclude>.gitignore</exclude>
+                            </excludes>
+                        </fileset>
+                    </filesets>
+                </configuration>
+            </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>

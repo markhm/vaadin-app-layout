@@ -8,6 +8,7 @@ import com.vaadin.flow.component.AttachEvent;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.Composite;
 import com.vaadin.flow.component.HasElement;
+import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.router.RouterLayout;
 import com.vaadin.flow.theme.Theme;
@@ -17,6 +18,7 @@ import com.vaadin.flow.theme.lumo.Lumo;
  * Base class implementing router layout. Extending class is supposed to call {@link #init(AppLayout)} to initialize
  * the {@link AppLayout}. This can be extended directly if there is another parent layout defining a viewport.
  */
+@CssImport("./com/github/appreciated/app-layout/app-layout-styles-lumo.css")
 public class AppLayoutRouterLayoutBase<T extends AppLayout> extends Composite<Div> implements RouterLayout {
 
     private final ThemeHelper helper;
@@ -81,11 +83,14 @@ public class AppLayoutRouterLayoutBase<T extends AppLayout> extends Composite<Di
     @Override
     protected void onAttach(AttachEvent attachEvent) {
         super.onAttach(attachEvent);
-        if (getClass().getAnnotation(Theme.class) != null && getClass().getAnnotation(Theme.class).value() != Lumo.class) {
-            attachEvent.getUI().getPage().addStyleSheet("./com/github/appreciated/app-layout/app-layout-styles-material.css");
-        } else {
-            attachEvent.getUI().getPage().addStyleSheet("./com/github/appreciated/app-layout/app-layout-styles-lumo.css");
-        }
+
+        // BUG: This does not work, so importing at the beginning of the class. Hardcoded to Lumo, which is fine.
+
+//        if (getClass().getAnnotation(Theme.class) != null && getClass().getAnnotation(Theme.class).value() != Lumo.class) {
+//            attachEvent.getUI().getPage().addStyleSheet("./com/github/appreciated/app-layout/app-layout-styles-material.css");
+//        } else {
+//            attachEvent.getUI().getPage().addStyleSheet("./com/github/appreciated/app-layout/app-layout-styles-lumo.css");
+//        }
         getUI().ifPresent(ui -> ui.addAfterNavigationListener(event -> {
             closeDrawerIfNotPersistent();
         }));

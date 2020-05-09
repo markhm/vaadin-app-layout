@@ -2,6 +2,7 @@ package com.github.appreciated.app.layout.component.applayout;
 
 import com.github.appreciated.app.layout.webcomponents.applayout.AppDrawerLayout;
 import com.vaadin.flow.component.Tag;
+import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.dependency.StyleSheet;
 import com.vaadin.flow.component.polymertemplate.Id;
@@ -23,7 +24,7 @@ public interface LeftLayouts {
 
     @Tag(LeftHybrid.TAG)
     @JsModule("./com/github/appreciated/app-layout/left/left-hybrid.js")
-    @StyleSheet("./com/github/appreciated/app-layout/left/left-hybrid.css")
+    @CssImport("./com/github/appreciated/app-layout/left/left-hybrid.css")
     class LeftHybrid extends AbstractLeftAppLayoutBase {
 
         public final static String TAG = "app-layout-left-hybrid";
@@ -119,7 +120,7 @@ public interface LeftLayouts {
 
     @Tag(LeftResponsiveHybrid.TAG)
     @JsModule("./com/github/appreciated/app-layout/left/left-responsive-hybrid.js")
-    @StyleSheet("./com/github/appreciated/app-layout/left/left-responsive-hybrid.css")
+    @CssImport("./com/github/appreciated/app-layout/left/left-responsive-hybrid.css")
     class LeftResponsiveHybrid extends AbstractLeftResponsiveHybrid {
 
         public final static String TAG = "app-layout-left-responsive-hybrid";
@@ -132,7 +133,7 @@ public interface LeftLayouts {
 
     @Tag(LeftResponsiveHybridNoAppBar.TAG)
     @JsModule("./com/github/appreciated/app-layout/left/left-responsive-hybrid-no-app-bar.js")
-    @StyleSheet("./com/github/appreciated/app-layout/left/left-responsive-hybrid-no-app-bar.css")
+    @CssImport("./com/github/appreciated/app-layout/left/left-responsive-hybrid-no-app-bar.css")
     class LeftResponsiveHybridNoAppBar extends AbstractLeftResponsiveHybrid {
 
 
@@ -146,7 +147,7 @@ public interface LeftLayouts {
 
     @Tag(LeftResponsiveHybridOverlayNoAppBar.TAG)
     @JsModule("./com/github/appreciated/app-layout/left/left-responsive-hybrid-overlay-no-app-bar.js")
-    @StyleSheet("./com/github/appreciated/app-layout/left/left-responsive-hybrid-overlay-no-app-bar.css")
+    @CssImport("./com/github/appreciated/app-layout/left/left-responsive-hybrid-overlay-no-app-bar.css")
     class LeftResponsiveHybridOverlayNoAppBar extends AbstractLeftResponsiveHybrid {
 
         public final static String TAG = "app-layout-left-responsive-hybrid-overlay-no-app-bar";
@@ -185,7 +186,7 @@ public interface LeftLayouts {
 
     @Tag(LeftResponsiveSmall.TAG)
     @JsModule("./com/github/appreciated/app-layout/left/left-responsive-small.js")
-    @StyleSheet("./com/github/appreciated/app-layout/left/left-responsive-small.css")
+    @CssImport("./com/github/appreciated/app-layout/left/left-responsive-small.css")
     class LeftResponsiveSmall extends AbstractLeftResponsive {
 
 
@@ -199,7 +200,7 @@ public interface LeftLayouts {
 
     @Tag(LeftResponsiveSmallNoAppBar.TAG)
     @JsModule("./com/github/appreciated/app-layout/left/left-responsive-small-no-app-bar.js")
-    @StyleSheet("./com/github/appreciated/app-layout/left/left-responsive-small-no-app-bar.css")
+    @CssImport("./com/github/appreciated/app-layout/left/left-responsive-small-no-app-bar.css")
     class LeftResponsiveSmallNoAppBar extends AbstractLeftResponsive {
 
         public final static String TAG = "app-layout-left-responsive-small-no-app-bar";
